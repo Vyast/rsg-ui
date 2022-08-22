@@ -10,6 +10,8 @@ import Toggle from "../components/Toggle";
 import CustomRange from "../components/CustomRange";
 import RadioGroup from "../components/RadioGroup";
 
+import { v1, v3, v4, v5 } from "uuid";
+
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -47,6 +49,8 @@ const TabCategories = [
 ];
 
 const Home: NextPage = () => {
+  const [value, setValue] = useState<string | undefined>(undefined);
+
   const [disabled, setDisabled] = useState(false);
   //const [listRef] = useAutoAnimate<HTMLDivElement>();
 
@@ -56,6 +60,8 @@ const Home: NextPage = () => {
 
     setDisabled(true);
   };
+
+  const genUUID = () => {};
 
   //const mutation = trpc.useMutation(["gen.genCrypto"]);
   //show gen string above button maybe put a border around it and when youh over highlight it, then a tooltip says click to copy
@@ -108,9 +114,11 @@ const Home: NextPage = () => {
             </Tab.Group>
           </div>
 
-          {/* <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
-            <span className="cursor-pointer">hio</span>
-          </div> */}
+          {value && (
+            <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
+              <span className="cursor-pointer">{value}</span>
+            </div>
+          )}
 
           <button
             type="button"

@@ -1,41 +1,22 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
-const Custom404: NextPage = () => {
+const Custom500: NextPage = () => {
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-      <div className="flex flex-shrink-0 justify-center">
-        <Link href="/" className="inline-flex">
-          <span className="sr-only">Workflow</span>
-          {/* <img
-            className="h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-            alt=""
-          /> */}
-        </Link>
-      </div>
-      <div className="py-16">
-        <div className="text-center">
-          <p className="text-base font-semibold text-blue-500">500</p>
+      <div className="text-center">
+        <p className="text-base font-semibold text-blue-500">500</p>
 
-          <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl sm:tracking-tight">
-            Error Occurred.
-          </h1>
+        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl sm:tracking-tight">
+          Error Occurred.
+        </h1>
 
-          <div className="mt-6">
-            <Link
-              href="/"
-              className="text-base font-medium text-blue-600 hover:text-blue-500"
-            >
-              <>
-                Home<span aria-hidden="true"> &rarr;</span>
-              </>
-            </Link>
-          </div>
+        <div className="mt-6 text-base font-medium text-blue-600 hover:text-blue-500">
+          <Link href="/">Home &rarr;</Link>
         </div>
       </div>
     </main>
   );
 };
 
-export default Custom404;
+export default Custom500;

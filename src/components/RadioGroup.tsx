@@ -1,24 +1,22 @@
 import { useState } from "react";
 import { RadioGroup as HeadlessRadioGroup } from "@headlessui/react";
 
-const plans = [
+const options = [
   {
-    name: "Startup",
-    ram: "12GB",
-    cpus: "6 CPUs",
-    disk: "160 GB SSD disk",
+    title: "v1",
+    description: "RFC version 1 (timestamp) UUID",
   },
   {
-    name: "Business",
-    ram: "16GB",
-    cpus: "8 CPUs",
-    disk: "512 GB SSD disk",
+    title: "v3",
+    description: "RFC version 3 (namespace w/ MD5) UUID",
   },
   {
-    name: "Enterprise",
-    ram: "32GB",
-    cpus: "12 CPUs",
-    disk: "1024 GB SSD disk",
+    title: "v4",
+    description: "RFC version 4 (random) UUID",
+  },
+  {
+    title: "v5",
+    description: "RFC version 5 (namespace w/ SHA-1) UUID",
   },
 ];
 
@@ -38,7 +36,7 @@ function CheckIcon(props: any) {
 }
 
 export default function RadioGroup() {
-  const [selected, setSelected] = useState(plans[0]);
+  const [selected, setSelected] = useState(options[0]);
 
   return (
     <div className="mx-auto w-full">
@@ -47,14 +45,16 @@ export default function RadioGroup() {
           Server size
         </HeadlessRadioGroup.Label>
         <div className="space-y-2">
-          {plans.map((plan) => (
+          {options.map((o, index) => (
             <HeadlessRadioGroup.Option
-              key={plan.name}
-              value={plan}
+              key={index}
+              value={o}
               className={({ checked }) =>
                 `${
-                  checked ? "bg-blue-500 bg-opacity-75 text-white" : "bg-white"
-                } relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md duration-300 focus:outline-none`
+                  checked
+                    ? "bg-blue-500 bg-opacity-75 text-white"
+                    : "border-2 border-gray-700"
+                } relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md duration-300`
               }
             >
               {({ checked }) => (
@@ -64,23 +64,17 @@ export default function RadioGroup() {
                       <div className="text-sm">
                         <HeadlessRadioGroup.Label
                           as="p"
-                          className={`font-medium  ${
-                            checked ? "text-white" : "text-gray-900"
-                          }`}
+                          className={`font-medium`}
                         >
-                          {plan.name}
+                          {o.title}
                         </HeadlessRadioGroup.Label>
                         <HeadlessRadioGroup.Description
                           as="span"
                           className={`inline ${
-                            checked ? "text-sky-100" : "text-gray-500"
+                            checked ? "text-white" : "text-gray-400"
                           }`}
                         >
-                          <span>
-                            {plan.ram}/{plan.cpus}
-                          </span>{" "}
-                          <span aria-hidden="true">&middot;</span>{" "}
-                          <span>{plan.disk}</span>
+                          <span>{o.description}</span>
                         </HeadlessRadioGroup.Description>
                       </div>
                     </div>
