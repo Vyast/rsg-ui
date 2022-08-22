@@ -1,9 +1,6 @@
 import { createRouter } from "./context";
 import { z } from "zod";
 
-import { v1, v3, v4, v5 } from "uuid";
-console.log(v1(), v4());
-
 export const generateRouter = createRouter()
   .query("hello", {
     input: z

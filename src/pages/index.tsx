@@ -2,15 +2,13 @@ import type { NextPage } from "next";
 import { Fragment, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 
-import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { Switch, Tab } from "@headlessui/react";
-import { trpc } from "../utils/trpc";
+//import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { Tab } from "@headlessui/react";
+//import { trpc } from "../utils/trpc";
 
 import Toggle from "../components/Toggle";
 import CustomRange from "../components/CustomRange";
 import RadioGroup from "../components/RadioGroup";
-
-import { v1, v3, v4, v5 } from "uuid";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
@@ -49,11 +47,8 @@ const TabCategories = [
 ];
 
 const Home: NextPage = () => {
-  const [enabled, setEnabled] = useState(false);
-  const [range, setRange] = useState(12);
   const [disabled, setDisabled] = useState(false);
-
-  const [listRef] = useAutoAnimate<HTMLDivElement>();
+  //const [listRef] = useAutoAnimate<HTMLDivElement>();
 
   const onGenerate = () => {
     console.log("yo", disabled);
@@ -113,9 +108,9 @@ const Home: NextPage = () => {
             </Tab.Group>
           </div>
 
-          <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
+          {/* <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
             <span className="cursor-pointer">hio</span>
-          </div>
+          </div> */}
 
           <button
             type="button"

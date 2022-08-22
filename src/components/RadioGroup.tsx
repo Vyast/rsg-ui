@@ -51,13 +51,13 @@ export default function RadioGroup() {
             <HeadlessRadioGroup.Option
               key={plan.name}
               value={plan}
-              className={({ active, checked }) =>
+              className={({ checked }) =>
                 `${
                   checked ? "bg-blue-500 bg-opacity-75 text-white" : "bg-white"
                 } relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md duration-300 focus:outline-none`
               }
             >
-              {({ active, checked }) => (
+              {({ checked }) => (
                 <>
                   <div className="flex w-full items-center justify-between">
                     <div className="flex items-center">
