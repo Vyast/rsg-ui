@@ -26,7 +26,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <meta property="og:image" content={imageMetaURL} />
         <meta name="twitter:image" content={imageMetaURL} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content="#3094da" />
+        <meta name="theme-color" content="#111" />
 
         {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />

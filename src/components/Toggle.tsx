@@ -1,3 +1,4 @@
+/* This example requires Tailwind CSS v2.0+ */
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
@@ -5,23 +6,26 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Toggle() {
+export default function Toggle({
+  label,
+  description,
+}: {
+  label: string;
+  description: string;
+}) {
   const [enabled, setEnabled] = useState(false);
 
   return (
     <Switch.Group as="div" className="flex items-center justify-between">
-      <span className="flex flex-grow flex-col">
-        <Switch.Label
-          as="span"
-          className="text-sm font-medium text-red-900"
-          passive
-        >
-          Available to hire
+      <span className="flex flex-grow flex-col pr-4">
+        <Switch.Label as="span" className="pb-1 text-sm font-medium" passive>
+          {label}
         </Switch.Label>
-        <Switch.Description as="span" className=" text-sm text-red-500">
-          Nulla amet tempus sit accumsan. Aliquet turpis sed sit lacinia.
+        <Switch.Description as="span" className="text-sm text-gray-400">
+          {description}
         </Switch.Description>
       </span>
+
       <Switch
         checked={enabled}
         onChange={setEnabled}

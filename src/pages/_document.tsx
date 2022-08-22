@@ -7,7 +7,7 @@ export default function Document() {
       lang="en"
     >
       <Head />
-      <body className="flex h-full flex-col  bg-[#111] text-[#fff]">
+      <body className="flex h-full flex-col bg-[#111] text-white">
         <Main />
         <NextScript />
       </body>
