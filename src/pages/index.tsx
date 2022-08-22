@@ -64,7 +64,9 @@ const Home: NextPage = () => {
 
   //const mutation = trpc.useMutation(["gen.genCrypto"]);
   //show gen string above button maybe put a border around it and when youh over highlight it, then a tooltip says click to copy
-  //focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+
+  //style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(344px, 44px);"
+  //style="position: absolute; left: 0px; transform: translate(59px, 0px);"
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
       <h1 className="mb-8 text-center text-5xl font-bold">
@@ -109,6 +111,10 @@ const Home: NextPage = () => {
                 ))}
               </Tab.Panels>
             </Tab.Group>
+          </div>
+
+          <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
+            <span className="cursor-pointer">hio</span>
           </div>
 
           <button
