@@ -1,54 +1,38 @@
-import { NextPageWithSubtitle } from "@/utils/types";
+import { NextPage } from "next";
 
-const Custom500: NextPageWithSubtitle = () => {
+const Custom404: NextPage = () => {
   return (
-    <div className="flex min-h-full flex-col bg-white pt-16 pb-12">
-      <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-shrink-0 justify-center">
-          <a href="/" className="inline-flex">
-            <span className="sr-only">Workflow</span>
-            <img
-              className="h-12 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-        </div>
-        <div className="py-16">
-          <div className="text-center">
-            <p className="text-base font-semibold text-indigo-600">500</p>
+    <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
+      <div className="flex flex-shrink-0 justify-center">
+        <a href="/" className="inline-flex">
+          <span className="sr-only">Workflow</span>
+          <img
+            className="h-12 w-auto"
+            src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+            alt=""
+          />
+        </a>
+      </div>
+      <div className="py-16">
+        <div className="text-center">
+          <p className="text-base font-semibold text-blue-500">500</p>
 
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:tracking-tight">
-              Error Occurred.
-            </h1>
-            <p className="mt-2 text-base text-gray-500">Sorry, try again later.</p>
-            <div className="mt-6">
-              <a href="/" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
-                Go back home<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl sm:tracking-tight">
+            Error Occurred.
+          </h1>
+
+          <div className="mt-6">
+            <a
+              href="/"
+              className="text-base font-medium text-blue-600 hover:text-blue-500"
+            >
+              Home<span aria-hidden="true"> &rarr;</span>
+            </a>
           </div>
         </div>
-      </main>
-      <footer className="mx-auto w-full max-w-7xl flex-shrink-0 px-4 sm:px-6 lg:px-8">
-        <nav className="flex justify-center space-x-4">
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
-            Contact Support
-          </a>
-          <span className="inline-block border-l border-gray-300" aria-hidden="true" />
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
-            Status
-          </a>
-          <span className="inline-block border-l border-gray-300" aria-hidden="true" />
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
-            Twitter
-          </a>
-        </nav>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 };
 
-Custom500.subtitle = "Er;or Occurred";
-
-export default Custom500;
+export default Custom404;
