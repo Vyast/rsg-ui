@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Fragment, useState } from "react";
+import { Fragment, MouseEventHandler, SetStateAction, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 
 //import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -32,42 +32,107 @@ const TabCategories = [
   },
   {
     label: "Integer",
-    children: (
-      <>
-        <CustomRange />
-      </>
-    ),
+    children: <CustomRange />,
   },
   {
     label: "UUID",
-    children: (
-      <>
-        <RadioGroup />
-      </>
-    ),
+    children: <RadioGroup />,
   },
 ];
 
+const uuidOptions = [
+  {
+    title: "v1",
+    description: "RFC version 1 (timestamp) UUID",
+  },
+  {
+    title: "v3",
+    description: "RFC version 3 (namespace w/ MD5) UUID",
+  },
+  {
+    title: "v4",
+    description: "RFC version 4 (random) UUID",
+  },
+  {
+    title: "v5",
+    description: "RFC version 5 (namespace w/ SHA-1) UUID",
+  },
+];
+
+const CheckIcon = (props: any) => (
+  <svg viewBox="0 0 24 24" fill="none" {...props}>
+    <circle cx={12} cy={12} r={12} fill="#fff" opacity="0.2" />
+    <path
+      d="M7 13l3 3 7-7"
+      stroke="#fff"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const TabListItem = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}) => (
+  <Tab as={Fragment}>
+    {({ selected }) => (
+      <button
+        onClick={onClick}
+        className={classNames(
+          "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-500 duration-300 hover:bg-[#111]",
+          selected
+            ? "bg-[#111] shadow"
+            : "text-white hover:bg-white/[0.12] hover:text-blue-500"
+        )}
+      >
+        {label}
+      </button>
+    )}
+  </Tab>
+);
+
 const Home: NextPage = () => {
   const [value, setValue] = useState<string | undefined>(undefined);
-
+  const [tab, setTab] = useState<number>(0);
   const [disabled, setDisabled] = useState(false);
   //const [listRef] = useAutoAnimate<HTMLDivElement>();
 
+  const [uuid, setUUID] = useState<"v1" | "v3" | "v4" | "v5">("v1");
+
   const onGenerate = () => {
-    console.log("yo", disabled);
     if (disabled) return;
-
     setDisabled(true);
-  };
 
-  const genUUID = () => {};
+    switch (tab) {
+      case 0:
+        // code block
+        break;
+      case 1:
+        // code block
+        break;
+      case 2:
+        const value = uuid === "v1" ? v1() : uuid === "v4" ? v4() : "";
+
+        setValue(value);
+        break;
+      default:
+        setValue("Error");
+    }
+
+    setDisabled(false);
+  };
 
   //const mutation = trpc.useMutation(["gen.genCrypto"]);
   //show gen string above button maybe put a border around it and when youh over highlight it, then a tooltip says click to copy
 
   //style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(344px, 44px);"
   //style="position: absolute; left: 0px; transform: translate(59px, 0px);"
+
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
       <h1 className="mb-8 text-center text-5xl font-bold">
@@ -84,18 +149,11 @@ const Home: NextPage = () => {
             <Tab.Group>
               <Tab.List className="flex space-x-1 rounded-xl p-1">
                 {TabCategories.map((e, index) => (
-                  <Tab key={index} as={Fragment}>
-                    {({ selected }) => {
-                      const className = classNames(
-                        "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-500 hover:bg-[#111] duration-300",
-                        selected
-                          ? "bg-[#111] shadow"
-                          : "text-white hover:bg-white/[0.12] hover:text-blue-500"
-                      );
-
-                      return <button className={className}>{e.label}</button>;
-                    }}
-                  </Tab>
+                  <TabListItem
+                    key={index}
+                    label={e.label}
+                    onClick={() => setTab(index)}
+                  />
                 ))}
               </Tab.List>
 
@@ -115,7 +173,7 @@ const Home: NextPage = () => {
           </div>
 
           {value && (
-            <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2">
+            <div className="mb-8 w-full rounded-lg bg-[#2a2a2a] py-1 px-2 text-center hover:text-blue-500">
               <span className="cursor-pointer">{value}</span>
             </div>
           )}

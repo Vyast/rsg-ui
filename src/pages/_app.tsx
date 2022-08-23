@@ -11,8 +11,8 @@ import Head from "next/head";
 const MyApp: AppType = ({ Component, pageProps }) => {
   const title = "n4.gg - Random String Generator";
   const description =
-    "Venom Anti-Cheat, the best premium anti-cheat solution for your FiveM server.";
-  const imageMetaURL = "https://random.n4.gg/transparent-logo.png";
+    "A simple UI for generating cryptographically secure random strings, integers, and UUID's.";
+  const imageMetaURL = "https://random.n4.gg/logo.png";
   const name = "Random String Generator by n4.gg";
 
   return (

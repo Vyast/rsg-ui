@@ -41,9 +41,6 @@ export default function RadioGroup() {
   return (
     <div className="mx-auto w-full">
       <HeadlessRadioGroup value={selected} onChange={setSelected}>
-        <HeadlessRadioGroup.Label className="sr-only">
-          Server size
-        </HeadlessRadioGroup.Label>
         <div className="space-y-2">
           {options.map((o, index) => (
             <HeadlessRadioGroup.Option
@@ -58,33 +55,28 @@ export default function RadioGroup() {
               }
             >
               {({ checked }) => (
-                <>
-                  <div className="flex w-full items-center justify-between">
-                    <div className="flex items-center">
-                      <div className="text-sm">
-                        <HeadlessRadioGroup.Label
-                          as="p"
-                          className={`font-medium`}
-                        >
-                          {o.title}
-                        </HeadlessRadioGroup.Label>
-                        <HeadlessRadioGroup.Description
-                          as="span"
-                          className={`inline ${
-                            checked ? "text-white" : "text-gray-400"
-                          }`}
-                        >
-                          <span>{o.description}</span>
-                        </HeadlessRadioGroup.Description>
-                      </div>
+                <div className="flex w-full items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="text-sm">
+                      <HeadlessRadioGroup.Label as="p" className="font-medium">
+                        {o.title}
+                      </HeadlessRadioGroup.Label>
+                      <HeadlessRadioGroup.Description
+                        as="span"
+                        className={`inline ${
+                          checked ? "text-white" : "text-gray-400"
+                        }`}
+                      >
+                        <span>{o.description}</span>
+                      </HeadlessRadioGroup.Description>
                     </div>
-                    {checked && (
-                      <div className="shrink-0 text-white">
-                        <CheckIcon className="h-6 w-6" />
-                      </div>
-                    )}
                   </div>
-                </>
+                  {checked && (
+                    <div className="shrink-0 text-white">
+                      <CheckIcon className="h-6 w-6" />
+                    </div>
+                  )}
+                </div>
               )}
             </HeadlessRadioGroup.Option>
           ))}

@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   darkMode: "class",
   theme: {
     fontFamily: {
@@ -8,5 +11,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
 };
