@@ -117,7 +117,8 @@ const Home: NextPage = () => {
   const [uuid, setUUID] = useState(uuidOptions[0]);
 
   const [value, setValue] = useState<string | undefined>(undefined);
-  const [length, setLength] = useState(12);
+  const [strLength, setStrLength] = useState(12);
+  const [numLength, setNumLength] = useState(12);
 
   const [numeric, setNumeric] = useState(true);
   const [uppercase, setUppercase] = useState(true);
@@ -140,12 +141,14 @@ const Home: NextPage = () => {
 
         setValue(
           cryptoRandomString(
-            characters === "" ? { length, type: "hex" } : { length, characters }
+            characters === ""
+              ? { length: strLength, type: "hex" }
+              : { length: strLength, characters }
           )
         );
         break;
       case 1:
-        setValue(cryptoRandomString({ type: "numeric", length }));
+        setValue(cryptoRandomString({ type: "numeric", length: numLength }));
         break;
       case 2:
         setValue(uuid!.func());
@@ -205,11 +208,11 @@ const Home: NextPage = () => {
                     enabled={ascii}
                     setEnabled={setAscii}
                   />
-                  <CustomRange value={length} setValue={setLength} />
+                  <CustomRange value={strLength} setValue={setStrLength} />
                 </TabPanelItem>
 
                 <TabPanelItem>
-                  <CustomRange value={length} setValue={setLength} />
+                  <CustomRange value={numLength} setValue={setNumLength} />
                 </TabPanelItem>
 
                 <TabPanelItem>
