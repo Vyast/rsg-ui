@@ -1,20 +1,18 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Switch } from "@headlessui/react";
-
-function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import classNames from "../utils/classNames";
 
 export default function Toggle({
   label,
   description,
+  enabled,
+  setEnabled,
 }: {
   label: string;
   description: string;
+  enabled: boolean;
+  setEnabled: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [enabled, setEnabled] = useState(false);
-
   return (
     <Switch.Group as="div" className="flex items-center justify-between">
       <span className="flex flex-grow flex-col pr-4">
