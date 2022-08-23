@@ -1,0 +1,19 @@
+{
+  "name": "n4.gg - Random String Generator",
+  "short_name": "Random String Generator",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#111",
+  "background_color": "#111",
+  "display": "standalone"
+}

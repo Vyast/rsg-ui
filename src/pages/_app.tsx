@@ -22,23 +22,18 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <meta name="twitter:image" content={imageMetaURL} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#111" />
-
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png?v=2"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png?v=2" />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png?v=2"
+          href="/logo-32.png?v=2"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png?v=2"
+          href="/logo-16.png?v=2"
         />
         <link rel="manifest" href="/site.webmanifest?v=2" />
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
