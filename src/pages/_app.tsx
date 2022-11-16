@@ -2,13 +2,13 @@ import "../styles/globals.css";
 import type { AppType } from "next/dist/shared/lib/utils";
 import Head from "next/head";
 
-const MyApp: AppType = ({ Component, pageProps }) => {
-  const title = "n4.gg - Random String Generator";
-  const description =
-    "A simple UI for generating cryptographically secure random strings, integers, and UUID's.";
-  const imageMetaURL = "https://random.n4.gg/logo.png";
-  const name = "Random String Generator by n4.gg";
+const title = "n4.gg - Random String Generator";
+const description =
+  "A simple UI for generating cryptographically secure random strings, integers, and UUID's.";
+const imageMetaURL = "https://random.n4.gg/logo.png";
+const name = "Random String Generator by n4.gg";
 
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
