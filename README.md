@@ -1,3 +1,9 @@
+<h1 align="center">Random String Generator UI</h1>
+
+<p align="center">
+  A simple UI with multiple options for generating random, cryptographically secure numbers and strings.
+</p>
+
 # Create T3 App
 
 This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
