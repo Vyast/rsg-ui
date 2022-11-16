@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import type { AppType } from "next/dist/shared/lib/utils";
-import PlausibleProvider from "next-plausible";
 import Head from "next/head";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
@@ -11,7 +10,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   const name = "Random String Generator by n4.gg";
 
   return (
-    <PlausibleProvider domain="random.n4.gg">
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -42,7 +41,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
 
       <Component {...pageProps} />
-    </PlausibleProvider>
+    </>
   );
 };
 
