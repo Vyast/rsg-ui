@@ -5,7 +5,7 @@ import Head from "next/head";
 const title = "n4.gg - Random String Generator";
 const description =
   "A simple UI for generating cryptographically secure random strings, integers, and UUID's.";
-const imageMetaURL = "https://random.n4.gg/logo.png";
+const imageMetaURL = "https://rsg.vyast.dev/logo.png";
 const name = "Random String Generator by n4.gg";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
