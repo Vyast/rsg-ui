@@ -1,8 +1,8 @@
-import "../styles/globals.css";
-import type { AppType } from "next/dist/shared/lib/utils";
+import "@/styles/globals.css";
+import { type AppType } from "next/app";
 import Head from "next/head";
 
-const title = "n4.gg - Random String Generator";
+const title = "Random String Generator UI";
 const description =
   "A simple UI for generating cryptographically secure random strings, integers, and UUID's.";
 const imageMetaURL = "https://rsg.vyast.dev/logo.png";
