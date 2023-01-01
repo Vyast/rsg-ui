@@ -1,7 +1,6 @@
-import { NextPage } from "next";
 import Link from "next/link";
 
-const Custom404: NextPage = () => {
+export default function NotFound() {
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
       <div className="text-center">
@@ -17,6 +16,4 @@ const Custom404: NextPage = () => {
       </div>
     </main>
   );
-};
-
-export default Custom404;
+}
