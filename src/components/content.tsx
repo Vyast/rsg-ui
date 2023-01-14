@@ -34,22 +34,38 @@ export function Content() {
       <div className="my-4 flex w-full flex-col gap-2">
         <div className="flex w-full items-center justify-between">
           <div className="text-white">Hexadecimal</div>
-          <CustomSwitch isChecked={isHex} setChecked={setHex} />
+          <CustomSwitch
+            label="Hexadecimal Switch"
+            isChecked={isHex}
+            setChecked={setHex}
+          />
         </div>
 
         <div className="flex w-full items-center justify-between">
           <div className="text-white">String</div>
-          <CustomSwitch isChecked={isString} setChecked={setString} />
+          <CustomSwitch
+            label="String Switch"
+            isChecked={isString}
+            setChecked={setString}
+          />
         </div>
 
         <div className="flex w-full items-center justify-between">
           <div className="text-white">Integer</div>
-          <CustomSwitch isChecked={isInt} setChecked={setInt} />
+          <CustomSwitch
+            label="Integer Switch"
+            isChecked={isInt}
+            setChecked={setInt}
+          />
         </div>
 
         <div className="flex w-full items-center justify-between">
           <div className="text-white">UUID</div>
-          <CustomSwitch isChecked={isUUID} setChecked={setUUID} />
+          <CustomSwitch
+            label="UUID Switch"
+            isChecked={isUUID}
+            setChecked={setUUID}
+          />
         </div>
 
         <div className="flex w-full flex-col items-center gap-1">

@@ -20,7 +20,10 @@ export function CustomSlider(props: {
       <Slider.Track className="relative h-1 flex-grow rounded-full bg-slate-700">
         <Slider.Range className="absolute h-full rounded-full bg-white" />
       </Slider.Track>
-      <Slider.Thumb className="block h-5 w-5 rounded-xl bg-white shadow-inner duration-100 hover:scale-95 focus:outline-slate-900" />
+      <Slider.Thumb
+        aria-label={props.label}
+        className="block h-5 w-5 rounded-xl bg-white shadow-inner duration-100 hover:scale-95 focus:outline-slate-900"
+      />
     </Slider.Root>
   );
 }

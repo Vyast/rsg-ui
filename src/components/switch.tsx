@@ -3,11 +3,13 @@ import { Switch } from "@headlessui/react";
 import clsx from "clsx";
 
 export function CustomSwitch(props: {
+  label: string;
   isChecked: boolean;
   setChecked: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
     <Switch
+      aria-label={props.label}
       checked={props.isChecked}
       onChange={props.setChecked}
       className={clsx(
