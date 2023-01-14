@@ -1,21 +1,26 @@
 import "@/styles/globals.css";
+import { AnalyticsWrapper } from "@/components/analytics";
 import { Rubik } from "@next/font/google";
 import clsx from "clsx";
 
 const rubik = Rubik({
   subsets: ["latin"],
-  variable: "--rubik-font",
 });
 
-interface RootLayoutProps {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function Layout({ children }: RootLayoutProps) {
+}) {
   return (
-    <html lang="en">
-      <body className={clsx(rubik.className, "bg-red-900 text-neutral-50")}>
+    <html
+      lang="en"
+      className={clsx(rubik.className, "bg-white text-slate-900 antialiased")}
+    >
+      <head />
+      <body>
         {children}
+        <AnalyticsWrapper />
       </body>
     </html>
   );
